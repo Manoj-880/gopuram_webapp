@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+hr{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mainPage{
   display: flex;
-  flex-direction: column;
+  width: 100vw;
+}
+
+.sideNavComponent{
+  width: 15%;
+  height: 100vh;
+}
+
+.sideNav{
+  width: 100%;
+  background-color: darkblue;
+  height: 100%;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.sideNav p {
+  color: #4b4b4b;
+  background-color: #ddd;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  padding: 0.2rem 0 0.2rem 0.5rem;
+  border-radius: 5px;
+}
+
+.sideNav .navLink {
+  text-decoration: none;
+}
+
+.App{
+  width: 85%;
+  padding-left: 1.5rem;
+}
+
+.header{
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.AddUser{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  height: 3rem;
+  border: 0.5px solid black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.userTable{
+  width: 100%;
 }
+
+.actionButton{
+  margin: 0.2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.modal-content  {
+  background-color: aquamarine;
+  padding: 1rem;
+  width: 50%;
+  margin: auto;
+}
+
+.modal-content form{
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+}
+
+.modal-content form .submit{
+  width: 5rem;
+}
+
