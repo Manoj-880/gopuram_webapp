@@ -1,6 +1,15 @@
 import axios from "axios"
 import {api} from "../constatns"
 
+const loginform = async (payload) => {
+    try {
+        const response = await axios.post(api+'webusers/login', payload);
+        return response.data;
+    } catch (error) {
+        console.log('error while login: ', error);
+    }
+}
+
 const addUser = async (payload) => {
     try {
         const response = await axios.post(api+'webusers/add', payload);
@@ -46,4 +55,4 @@ const deleteUser = async (id) => {
     }
 }
 
-export {getAll, getUserById, editUser, deleteUser, addUser};
+export {getAll, getUserById, editUser, deleteUser, addUser, loginform};

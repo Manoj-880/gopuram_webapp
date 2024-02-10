@@ -9,7 +9,6 @@ const EditEventType = ({ eventType, setShowEditModal }) => {
     });
 
     useEffect(() => {
-        // Set the form data when eventType changes
         if (eventType) {
             setFormData({
                 title: eventType.title || '',

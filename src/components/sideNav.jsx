@@ -28,11 +28,6 @@ const SideNav = () => {
             name: "Donation Type",
             path: '/donation-type',
         },
-        {
-            id: 6,
-            name: "Transactions",
-            path: '/transactions',
-        },
     ]
     return (
         <div className='sideNav' >
