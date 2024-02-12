@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {getAll, deleteUser} from '../api_calls/webUsersApi'
 import AddWebUserForm from '../components/webUsers/addWebUserForm'
 import EditWebUser from '../components/webUsers/editWebUsersForm'
+import { message } from 'antd'
 
 const WebUsers = () => {
     const [users, setUsers] = useState([]);
@@ -25,7 +26,7 @@ const WebUsers = () => {
 
     const handleDeleteUser = async (userId) => {
         var response = await deleteUser(userId);
-        console.log(response);
+        message.success(response.message);
     };
 
     const handleAddUser = () => {

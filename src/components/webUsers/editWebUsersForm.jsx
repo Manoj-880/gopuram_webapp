@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {  editUser } from '../../api_calls/webUsersApi';
+import { message } from 'antd';
 
 const EditWebUser = ({ user, setShowEditModal }) => {
     const [formData, setFormData] = useState({
@@ -21,7 +22,7 @@ const EditWebUser = ({ user, setShowEditModal }) => {
         e.preventDefault();
         try {
             const response = await editUser(user._id, formData);
-            console.log(response);
+            message.success(response.message);
             setShowEditModal(false); 
         } catch (error) {
             console.error('Error updating user:', error);

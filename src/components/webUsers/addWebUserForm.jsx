@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { addUser } from '../../api_calls/webUsersApi'
+import { message } from 'antd';
 
 const AddWebUserForm = (props) => {
     const [formData, setFormData] = useState({
@@ -19,9 +20,18 @@ const AddWebUserForm = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        var response = await addUser(formData);
-        console.log(response);
-        props.setShowModal(false);
+        try {
+            var response = await addUser(formData);
+        if(response && response.success) {
+            message.success(response.message);
+            props.setShowModal(false);
+        } else{
+            message.error(response ? response.message: 'Unknown error');
+        }
+        } catch (error) {
+            console.error(`Error during adding web user: ${error}`);
+            message.error('Error during adding web user. Please try again later.');
+        }
     };
     
     return (
