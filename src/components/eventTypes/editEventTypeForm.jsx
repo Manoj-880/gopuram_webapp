@@ -31,6 +31,7 @@ const EditEventType = ({ eventType, setShowEditModal }) => {
             const response = await update(eventType._id, formData);
             console.log(response);
             setShowEditModal(false); 
+            window.location.reload();
         } catch (error) {
             console.error('Error updating user:', error);
         }

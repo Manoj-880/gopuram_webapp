@@ -31,6 +31,7 @@ const handleSubmit = async (e) => {
         const response = await update(donationType._id, formData);
         console.log(response);
         setShowEditModal(false);
+        window.location.reload();
     } catch (error) {
         console.log('Error updating donation type: ', error);
     }

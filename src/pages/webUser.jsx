@@ -12,7 +12,7 @@ const WebUsers = () => {
     
     useEffect(() => {
         fetchUsers();
-    }, [users]);
+    }, []);
 
     const fetchUsers = async () => {
         var response = await getAll();
@@ -27,6 +27,7 @@ const WebUsers = () => {
     const handleDeleteUser = async (userId) => {
         var response = await deleteUser(userId);
         message.success(response.message);
+        window.location.reload();
     };
 
     const handleAddUser = () => {
@@ -37,7 +38,7 @@ const WebUsers = () => {
         <div className='webUsers'>
             <div>
                 <div className='header'>
-                    <h1>Users List</h1>
+                    <h1>Web users List</h1>
                     <button onClick={handleAddUser} className='AddUser'>Add User</button>
                 </div>
                 <hr />

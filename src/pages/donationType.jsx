@@ -11,7 +11,7 @@ const DonationType = () => {
 
   useEffect(() => {
     fetchDonationTypes();
-  }, [donationTypes]);
+  }, []);
 
   const fetchDonationTypes = async () => {
     var response = await getAll();
@@ -25,6 +25,7 @@ const DonationType = () => {
   const handleDeleteDonationType = async (id) => {
     var response = await deleteById(id);
     console.log(response);
+    window.location.reload();
   };
 
   const handleEditDonationType = async (donationType) => {

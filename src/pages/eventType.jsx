@@ -11,7 +11,7 @@ const EventType = () => {
 
   useEffect(() => {
     fetchEventTypes();
-  }, [eventTypes]);
+  }, []);
 
   const fetchEventTypes = async () => {
     var response = await getAll();
@@ -26,6 +26,7 @@ const EventType = () => {
   const handleDeleteEventType = async (id) => {
     var response = await detele(id);
     console.log(response);
+    window.location.reload();
   };
 
   const handleAddEventType = () => {

@@ -22,8 +22,13 @@ const EditWebUser = ({ user, setShowEditModal }) => {
         e.preventDefault();
         try {
             const response = await editUser(user._id, formData);
-            message.success(response.message);
-            setShowEditModal(false); 
+            if(response.success){
+                message.success(response.message);
+                setShowEditModal(false); 
+                window.location.reload();
+            } else {
+                message.error(response.message);
+            }
         } catch (error) {
             console.error('Error updating user:', error);
         }

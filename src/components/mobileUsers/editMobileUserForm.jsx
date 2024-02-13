@@ -25,6 +25,7 @@ const EditMobileUser = ({ user, setShowEditModal }) => {
             const response = await editUser(user._id, formData);
             console.log(response);
             setShowEditModal(false); 
+            window.location.reload();
         } catch (error) {
             console.error('Error updating user:', error);
         }

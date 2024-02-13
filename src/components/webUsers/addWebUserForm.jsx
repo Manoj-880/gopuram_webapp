@@ -25,6 +25,7 @@ const AddWebUserForm = (props) => {
         if(response && response.success) {
             message.success(response.message);
             props.setShowModal(false);
+            window.location.reload();
         } else{
             message.error(response ? response.message: 'Unknown error');
         }

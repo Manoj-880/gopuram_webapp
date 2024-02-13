@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {getAll, deleteUser} from '../api_calls/mobileUsersApi'
 import EditMobileUser from '../components/mobileUsers/editMobileUserForm';
+import { message } from 'antd';
 
 const MobileUsers = () => {
   const [users, setUsers] = useState([]);
@@ -9,7 +10,7 @@ const MobileUsers = () => {
 
   useEffect(() => {
     fetchUsers();
-  }, [users]);
+  }, []);
 
   const fetchUsers = async () => {
     var response = await getAll();
@@ -23,7 +24,8 @@ const MobileUsers = () => {
 
 const handleDeleteUser = async (userId) => {
     var response = await deleteUser(userId);
-    console.log(response);
+    message.success(response.message);
+    window.location.reload();
 };
 
   return (

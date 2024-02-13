@@ -20,6 +20,7 @@ const AddEventTypeForm = (props) => {
         var response = await add(formData);
         console.log(response);
         props.setShowModal(false);
+        window.location.reload();
     };
     
     return (

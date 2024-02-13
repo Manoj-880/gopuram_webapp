@@ -18,6 +18,7 @@ const Login = () => {
             var response = await loginform(formData);
             if (response && response.success) {
                 message.success(response.message);
+                localStorage.setItem('userData', JSON.stringify(response.data));
                 login();
                 navigate('/');
             } else {
