@@ -4,7 +4,6 @@ import {api} from "../constatns"
 const loginform = async (payload) => {
     try {
         const response = await axios.post(api+'webusers/login', payload);
-        console.log(` apicall: ${response}`);
         return response.data;
     } catch (error) {
         console.log('error while login: ', error);

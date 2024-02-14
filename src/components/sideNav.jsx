@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const SideNav = () => {
+    const navigate = useNavigate();
     const navItems = [
         {
             id: 1,
@@ -28,9 +29,20 @@ const SideNav = () => {
             name: "Donation Type",
             path: '/donation-type',
         },
+        {
+            id: 6,
+            name: "Transacions",
+            path: '/transactions',
+        },
     ]
+
+const handleLogout = () => {
+    localStorage.removeItem('userData');
+    navigate('login');
+}
+
     return (
-        <div className='sideNav' >
+        <div className='sideNav' style={{display:"flex", flexDirection:"column", justifyContent:"space-between"}}>
             <div className='navlist'>
                 {navItems.map((navItem) => (
                     <Link to={navItem.path} key={navItem.id} className='navLink'>
@@ -38,6 +50,7 @@ const SideNav = () => {
                     </Link>
                 ))}
             </div>
+            <button onClick={handleLogout} style={{height:"2.5rem", marginBottom:"3rem"}}>Logout</button>
         </div>
     )
 }

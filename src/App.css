@@ -94,14 +94,77 @@ hr{
 .loginComponent{
   height: 100vh;
   width: 100%;
-  background-color: darkblue;
+  background-color: #3b3b7c;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .login{
-  width: 40%;
-  padding: 3rem;
-  background-color: #eee;
+  /* height: 60%; */
+  width: 50%;
+  padding: 5rem 3rem;
+  border-radius: 0.5rem;
+  background-color: #12157a94;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.login h2{
+  color: #eee;
+  margin-bottom: 0.5rem
+}
+
+.login form{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login input{
+  /* width: 100%; */
+  font-size: 1rem;
+  border: #eee 0.5px solid;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.2rem;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  color: #fff;
+}
+
+.login .inputsGroup{
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  align-items: center;
+}
+
+.login .inputsGroup .form-group{
+  margin-bottom: 0.8rem;
+}
+
+.login form button{
+  width: 28%;
+  margin-top: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4b4b4b;
+  background-color: #FFD700;
+  transition: 0.5s;
+}
+
+.login form button:hover{
+  background-color: #ffde22;
+  /* color: #eee; */
 }

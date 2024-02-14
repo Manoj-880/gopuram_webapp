@@ -34,6 +34,17 @@ const handleAddEvent = () => {
   setShowModal(true);
 };
 
+const formatTime = (timeString) => {
+  const time = new Date(timeString);
+  let hours = time.getHours();
+  const minutes = time.getMinutes().toString().padStart(2, '0');
+  let amPm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12 || 12; 
+  const formattedTime = `${hours}:${minutes} ${amPm}`;
+  return formattedTime;
+}
+
+
   return (
     <div className='events'>
       <div>
@@ -62,7 +73,7 @@ const handleAddEvent = () => {
                       <td>{new Date(event.startDate).toLocaleDateString()}</td>
                       <td>{new Date(event.endDate).toLocaleDateString()}</td>
                       <td>{event.venue}</td>
-                      <td>{event.time}</td>
+                      <td>{formatTime(event.time)}</td>
                       <td>
                           <button className='actionButton' onClick={() => handleEditEvent(event)}>Edit</button>
                           <button className='actionButton' onClick={() => handleDeleteEvent(event._id)}>Delete</button>

@@ -6,6 +6,7 @@ import MobileUsers from './mobileUsers'
 import EventType from './eventType'
 import Events from './events'
 import DonationType from './donationType'
+import Transactions from './transactions'
 
 const MainPage = () => {
     return (
@@ -20,6 +21,7 @@ const MainPage = () => {
                     <Route path='/event-type' element= {<EventType/>}/>
                     <Route path='/events' element= {<Events/>}/>
                     <Route path='/donation-type' element= {<DonationType/>}/>
+                    <Route path='/transactions' element= {<Transactions/>} />
                 </Routes>
             </div>
         </div>

@@ -6,8 +6,9 @@ import { add } from '../../api_calls/eventApi';
 const AddEventForm = (props) => {
     const [formData, setFormData] = useState({
         eventType: '',
-        startDate: new Date(),
-        endDate: new Date(),
+        startDate: new Date().setHours(0, 0, 0, 0),
+    endDate: new Date().setHours(0, 0, 0, 0), 
+        time: '',
         venue: '',
         userId: ''
     });
@@ -53,10 +54,11 @@ const handleEndDateChange = (date) => {
 
 const handleTimeChange = (time) => {
     setFormData({
-        ...formData,
-        time: time
+    ...formData,
+    time: time
     });
 };
+
 
 const handleSubmit = async (e) => {
     e.preventDefault();

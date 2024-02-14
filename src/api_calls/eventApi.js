@@ -30,6 +30,7 @@ const add = async (payload) => {
 
 const update = async (id, payload) => {
     try {
+        console.log(payload);
         const response = await axios.put(api+'events/update/'+id, payload);
         return response.data;
     } catch (error) {

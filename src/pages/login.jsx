@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../middleware/authContext';
 import { loginform } from '../api_calls/webUsersApi';
 import { message } from 'antd';
 
 const Login = () => {
     const navigate = useNavigate();
-    const { login } = useAuth();
     const [formData, setFormData] = useState({
         userName: '',
         password: '',
@@ -19,7 +17,6 @@ const Login = () => {
             if (response && response.success) {
                 message.success(response.message);
                 localStorage.setItem('userData', JSON.stringify(response.data));
-                login();
                 navigate('/');
             } else {
                 message.error(response ? response.message : 'Unknown error');
@@ -41,11 +38,10 @@ const Login = () => {
     return (
         <div className="loginComponent">
             <div className='login'>
-                <h2 style={{marginBottom:"0.5rem"}}>Login</h2>
+                <h2>Login</h2>
                 <form onSubmit={handleSubmit}>
-                    <div style={{display:"table-caption"}}>
-                        <div className='form-group' style={{marginBottom:"0.5rem"}}>
-                            <label htmlFor='userName'>User Name:</label>
+                    <div className='inputsGroup'>
+                        <div className='form-group'>
                             <input
                                 type='text'
                                 id='userName'
@@ -53,10 +49,10 @@ const Login = () => {
                                 value={formData.userName}
                                 onChange={handleChange}
                                 required
+                                placeholder='User Name*'
                             />
                         </div>
                         <div className='form-group' style={{marginBottom:"0.5rem"}}>
-                            <label htmlFor='password'>Password:</label>
                             <input
                                 type='password'
                                 id='password'
@@ -64,10 +60,11 @@ const Login = () => {
                                 value={formData.password}
                                 onChange={handleChange}
                                 required
+                                placeholder='Password*'
                             />
                         </div>
                     </div>
-                    <button type='submit' style={{paddingLeft:'0.8rem', paddingRight: '0.8rem', paddingTop: '0.2rem', paddingBottom:'0.2rem'}}>Login</button>
+                    <button type='submit'>Login</button>
                 </form>
             </div>
         </div>
