@@ -1,8 +1,10 @@
 import React from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import MainPage from './pages/mainPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css'
 import Login from './pages/login';
+import './App.css'
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-const SideNav = () => {
+const SideNav = ({navActive, setNavActive}) => {
     const navigate = useNavigate();
     const navItems = [
         {
@@ -36,17 +36,26 @@ const SideNav = () => {
         },
     ]
 
+    const navStyle = {
+        active: "navLink active",
+        inActive: "navLink inactive"
+    }
+
 const handleLogout = () => {
-    localStorage.removeItem('userData');
+    sessionStorage.removeItem('userData');
     navigate('login');
+}
+
+const handleOnClickLink = (id) => {
+    setNavActive(id);
 }
 
     return (
         <div className='sideNav' style={{display:"flex", flexDirection:"column", justifyContent:"space-between"}}>
             <div className='navlist'>
                 {navItems.map((navItem) => (
-                    <Link to={navItem.path} key={navItem.id} className='navLink'>
-                        <p>{navItem.name}</p>
+                    <Link to={navItem.path} key={navItem.id} className={navItem.id === navActive ? navStyle.active : navStyle.inActive} onClick={() => handleOnClickLink(navItem.id)}>
+                        <p >{navItem.name}</p>
                     </Link>
                 ))}
             </div>

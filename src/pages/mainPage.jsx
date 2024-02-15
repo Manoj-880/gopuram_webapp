@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import SideNav from '../components/sideNav'
 import WebUsers from '../pages/webUser'
-import {Routes, Route} from 'react-router-dom'
+import {Routes, Route, useLocation} from 'react-router-dom'
 import MobileUsers from './mobileUsers'
 import EventType from './eventType'
 import Events from './events'
@@ -9,10 +9,47 @@ import DonationType from './donationType'
 import Transactions from './transactions'
 
 const MainPage = () => {
+
+    const [navActive, setNavActive] = useState(1);
+    const location = useLocation();
+
+useEffect(() => {
+    signinCheck();
+    switch (location.pathname) {
+        case '/':
+            setNavActive(1);
+            break;
+        case '/mobile-users':
+            setNavActive(2);
+            break;
+        case '/event-type':
+            setNavActive(3);
+            break;
+        case '/events':
+            setNavActive(4);
+            break;
+        case '/donation-type':
+            setNavActive(5);
+            break;
+        case '/transactions':
+            setNavActive(6);
+            break;
+        default:
+            setNavActive(1);
+            break;
+        }
+    }, [location.pathname]);
+
+    const signinCheck = () => {
+        if(!window.sessionStorage.getItem('userData')){ // Check sessionStorage instead of localStorage
+            window.location.replace('/login');
+        }
+    }
+
     return (
         <div className='mainPage'>
             <div className='sideNavComponent'>
-                <SideNav/>
+                <SideNav navActive={navActive} setNavActive={setNavActive}/>
             </div>
             <div className='App'>
                 <Routes>

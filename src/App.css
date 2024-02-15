@@ -1,4 +1,3 @@
-
 *{
   margin: 0;
   padding: 0;
@@ -13,32 +12,7 @@ hr{
 .mainPage{
   display: flex;
   width: 100vw;
-}
-
-.sideNavComponent{
-  width: 15%;
-  height: 100vh;
-}
-
-.sideNav{
-  width: 100%;
-  background-color: darkblue;
-  height: 100%;
-  padding: 1rem;
-  text-decoration: none;
-}
-
-.sideNav p {
-  color: #4b4b4b;
-  background-color: #ddd;
-  margin-top: 1rem;
-  font-size: 1.5rem;
-  padding: 0.2rem 0 0.2rem 0.5rem;
-  border-radius: 5px;
-}
-
-.sideNav .navLink {
-  text-decoration: none;
+  background-color: #4b4b4b2d;
 }
 
 .App{
@@ -89,7 +63,7 @@ hr{
   width: 5rem;
 }
 
-
+/* ------------login page------------ */
 
 .loginComponent{
   height: 100vh;
@@ -98,14 +72,15 @@ hr{
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url('./assets/loginBackground.png');
+  background-size: cover;
 }
 
 .login{
-  /* height: 60%; */
-  width: 50%;
-  padding: 5rem 3rem;
+  width: auto;
+  padding: 5rem 10rem;
   border-radius: 0.5rem;
-  background-color: #12157a94;
+  background-color: #00000094;
   display: flex;
   gap: 1rem;
   flex-direction: column;
@@ -116,7 +91,7 @@ hr{
 
 .login h2{
   color: #eee;
-  margin-bottom: 0.5rem
+  margin-bottom: 0.5rem;
 }
 
 .login form{
@@ -128,7 +103,6 @@ hr{
 }
 
 .login input{
-  /* width: 100%; */
   font-size: 1rem;
   border: #eee 0.5px solid;
   padding: 0.5rem 0.8rem;
@@ -137,6 +111,15 @@ hr{
   align-items: center;
   background-color: transparent;
   color: #fff;
+}
+
+.login input:focus{
+  outline: none;
+}
+
+.login input::placeholder{
+  color: #aaa;
+  font-size: 0.9rem;
 }
 
 .login .inputsGroup{
@@ -151,20 +134,73 @@ hr{
 }
 
 .login form button{
-  width: 28%;
   margin-top: 1rem;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.3rem 1.2rem;
   border-radius: 0.2rem;
-  border: none;
+  border: 0.5px #ffde22 solid;
   font-size: 1.2rem;
   font-weight: 600;
   color: #4b4b4b;
-  background-color: #FFD700;
+  background-color: #ffde22;
   transition: 0.5s;
 }
 
 .login form button:hover{
-  background-color: #ffde22;
-  /* color: #eee; */
+  background-color: #eeeeee3f;
+  color: #eee;
+  border: 0.5px #eee solid;
 }
+
+/* ----------side nav---------- */
+
+
+.sideNavComponent{
+  width: 15%;
+  height: 100vh;
+  padding: 5px;
+}
+
+.sideNav{
+  width: 100%;
+  background-color: #1C2146;
+  height: 100%;
+  padding: 1rem;
+  text-decoration: none;
+  border-radius: 0.5rem;
+}
+
+.sideNav .active{
+  background-color: #2B2F57;
+  color: #EFB016;
+}
+
+.sideNav .active p{
+  scale: 1.05;
+}
+
+
+.sideNav .inactive{
+  background-color: transparent;
+  color: #eee;
+}
+
+.sideNav .inactive:hover{
+  background-color: #2B2F57;
+}
+
+.sideNav .navLink {
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0.2rem 0 0.2rem 1rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0.5rem 0rem;
+}
+
+.sideNav p{
+  margin: 0;
+}
+
