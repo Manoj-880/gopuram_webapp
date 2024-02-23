@@ -37,13 +37,4 @@ const update = async (id, payload) => {
     }
 };
 
-const deleteById = async (id) => {
-    try {
-        const response = await axios.delete(api+'donationtypes/delete/'+id);
-        return response.data;
-    } catch (error) {
-        console.log('error while deleting donation type: ', error);
-    }
-};
-
-export {getAll, getById, add, update, deleteById};
+export {getAll, getById, add, update};

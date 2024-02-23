@@ -17,7 +17,7 @@ const AddEventForm = (props) => {
 
     useEffect(() => {
         fetchEventTypes();
-        const userData = JSON.parse(localStorage.getItem('userData'));
+        const userData = JSON.parse(sessionStorage.getItem('userData'));
         if (userData && userData._id) {
             setFormData(prevState => ({
                 ...prevState,

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { deleteById, getAll } from '../api_calls/donationApi';
+import { getAll } from '../api_calls/donationApi';
 import AddDonationTypeForm from '../components/donationTypes/addDonationTypeForm';
 import EditDonationTypeForm from '../components/donationTypes/editDonationTypeForm';
 
@@ -20,12 +20,6 @@ const DonationType = () => {
 
   const handleAddDonationType = () => {
     setShowModal(true);
-  };
-
-  const handleDeleteDonationType = async (id) => {
-    var response = await deleteById(id);
-    console.log(response);
-    window.location.reload();
   };
 
   const handleEditDonationType = async (donationType) => {
@@ -58,7 +52,6 @@ const DonationType = () => {
                       <td>{donationType.amount}</td>
                       <td>
                           <button className='actionButton' onClick={() => handleEditDonationType(donationType)}>Edit</button>
-                          <button className='actionButton' onClick={() => handleDeleteDonationType(donationType._id)}>Delete</button>
                       </td>
                   </tr>
               ))}

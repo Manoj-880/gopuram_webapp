@@ -17,6 +17,14 @@ const Transactions = () => {
         window.location.reload();
     };
 
+    const handleDonationType = (transaction) => {
+        if (transaction.donationType.title === "Others"){
+            return transaction.donationName;
+        } else {
+            return transaction.donationType.title;
+        }
+    }
+
     const formatTime = (timeString) => {
         const time = new Date(timeString);
         let hours = time.getHours();
@@ -48,8 +56,8 @@ const Transactions = () => {
                         {transactions.map(transaction => (
                             <tr key={transaction._id} style={{alignSelf:"center"}}>
                                 <td>{transaction.userId.userName}</td>
-                                <td>{transaction.donationType.title || "Undefined"}</td>
-                                <td>{transaction.donationType.amount || "undefined"}</td>
+                                <td>{handleDonationType(transaction)|| "Undefined"}</td>
+                                <td>{transaction.donationType.amount || transaction.amount || "Undefined"}</td>
                                 <td>{formatTime(transaction.createdAt)}</td>
                             </tr>
                         ))}

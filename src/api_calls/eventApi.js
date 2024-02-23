@@ -22,6 +22,7 @@ const getById = async (id) => {
 const add = async (payload) => {
     try {
         const response = await axios.post(api+'events/add', payload);
+        
         return response.data;
     } catch (error) {
         console.log("error while adding event: ", error);

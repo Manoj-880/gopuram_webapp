@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {getAll, detele} from '../api_calls/eventTypeApi'
+import {getAll} from '../api_calls/eventTypeApi'
 import AddEventTypeForm from '../components/eventTypes/addEventTypeForm';
 import EditEventType from '../components/eventTypes/editEventTypeForm';
 
@@ -21,12 +21,6 @@ const EventType = () => {
   const handleEditEventType = (eventType) => {
     setSelectedEventType(eventType);
     setShowEditModal(true);
-  };
-
-  const handleDeleteEventType = async (id) => {
-    var response = await detele(id);
-    console.log(response);
-    window.location.reload();
   };
 
   const handleAddEventType = () => {
@@ -58,7 +52,6 @@ const EventType = () => {
                       <td>{eventTypes.description}</td>
                       <td>
                           <button className='actionButton' onClick={() => handleEditEventType(eventTypes)}>Edit</button>
-                          <button className='actionButton' onClick={() => handleDeleteEventType(eventTypes._id)}>Delete</button>
                       </td>
                   </tr>
               ))}
