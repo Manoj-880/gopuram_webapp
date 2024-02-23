@@ -45,6 +45,7 @@ const WebUsers = () => {
                 <table className='userTable'>
                     <thead>
                         <tr>
+                            <th>User Name</th>
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Mobile Number</th>
@@ -54,6 +55,7 @@ const WebUsers = () => {
                     <tbody>
                         {users.map(user => (
                             <tr key={user._id}>
+                                <td>{user.userName}</td>
                                 <td>{user.firstName}</td>
                                 <td>{user.lastName}</td>
                                 <td>{user.mobileNumber}</td>

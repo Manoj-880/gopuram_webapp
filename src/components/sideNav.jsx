@@ -34,6 +34,11 @@ const SideNav = ({navActive, setNavActive}) => {
             name: "Transacions",
             path: '/transactions',
         },
+        {
+            id: 7,
+            name: "Gallery",
+            path: '/gallery',
+        },
     ]
 
     const navStyle = {

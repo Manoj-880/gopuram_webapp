@@ -7,6 +7,7 @@ import EventType from './eventType'
 import Events from './events'
 import DonationType from './donationType'
 import Transactions from './transactions'
+import Gallery from './gallery'
 
 const MainPage = () => {
 
@@ -34,6 +35,9 @@ useEffect(() => {
         case '/transactions':
             setNavActive(6);
             break;
+        case '/gallery':
+            setNavActive(7);
+            break;
         default:
             setNavActive(1);
             break;
@@ -59,6 +63,7 @@ useEffect(() => {
                     <Route path='/events' element= {<Events/>}/>
                     <Route path='/donation-type' element= {<DonationType/>}/>
                     <Route path='/transactions' element= {<Transactions/>} />
+                    <Route path='/gallery' element={<Gallery/>} />
                 </Routes>
             </div>
         </div>

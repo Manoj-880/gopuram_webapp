@@ -17,7 +17,6 @@ const Login = () => {
             if (response && response.success) {
                 message.success(response.message);
                 sessionStorage.setItem('userData', JSON.stringify(response.data)); // Use sessionStorage instead of localStorage
-                startSessionTimer(10 * 60 * 1000);
                 navigate('/');
             } else {
                 message.error(response ? response.message : 'Unknown error');
@@ -27,14 +26,6 @@ const Login = () => {
             console.error('Error during login:', error);
             message.error('Error during login. Please try again later.');
         }
-    };
-    
-
-    const startSessionTimer = (duration) => {
-        setTimeout(() => {
-            const userData = sessionStorage.removeItem('userData'); // Clear sessionStorage after specified duration
-            console.log('SessionStorage Data:', userData);
-        }, duration);
     };
 
     const handleChange = (e) => {
