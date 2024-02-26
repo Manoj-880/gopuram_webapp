@@ -37,7 +37,7 @@ const Gallery = () => {
                 {images.map((image, index) => (
                     <div key={index} className="imageWrapper">
                         <div className="imageWithDeleteIcon" style={{ backgroundImage: `url(${image})` }}>
-                            <button className='deleteButton' onClick={() => handleDeleteImage(index)}><DeleteIcon/></button>
+                            <button className='deleteButton' onClick={() => handleDeleteImage(index)}><DeleteIcon style={{color: "#eee"}}/></button>
                         </div>
                     </div>
                 ))}
