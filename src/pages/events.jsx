@@ -3,6 +3,7 @@ import { deleteById, getAll } from '../api_calls/eventApi';
 import AddEventForm from '../components/events/addEventForm';
 import EditEventForm from '../components/events/editEventForm';
 import { message } from 'antd';
+import ControlPointIcon from '@mui/icons-material/ControlPoint';
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -48,9 +49,9 @@ const formatTime = (timeString) => {
   return (
     <div className='events'>
       <div>
-        <div className='header'>
+        <div className='web-header'>
           <h1>Events List</h1>
-          <button onClick={handleAddEvent} className='AddUser'>Add Event</button>
+          <button onClick={handleAddEvent} className='AddUser'><ControlPointIcon/> <p>Add Event</p></button>
         </div>
         <hr />
         <table className='userTable'>

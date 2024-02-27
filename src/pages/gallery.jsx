@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import AddImage from '../components/gallery/addImage';
 import DeleteIcon from '@mui/icons-material/Delete';
+import ControlPointIcon from '@mui/icons-material/ControlPoint';
 
 const Gallery = () => {
     const [images, setImages] = useState([]);
@@ -28,9 +29,9 @@ const Gallery = () => {
 
     return (
         <div className='gallery'>
-            <div className='header'>
+            <div className='web-header'>
                 <h1>Gallery</h1>
-                <button onClick={() => setShowModal(true)} className='addImage'>Add Images</button>
+                <button onClick={handleAddImage} className='AddUser'><ControlPointIcon/> <p>Add Image</p></button>
             </div>
             <hr />
             <div className="imageContainer">

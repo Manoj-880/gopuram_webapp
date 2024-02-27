@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getAll } from '../api_calls/donationApi';
 import AddDonationTypeForm from '../components/donationTypes/addDonationTypeForm';
 import EditDonationTypeForm from '../components/donationTypes/editDonationTypeForm';
+import ControlPointIcon from '@mui/icons-material/ControlPoint';
 
 const DonationType = () => {
   const [donationTypes, setDonationTypes] = useState([]);
@@ -30,9 +31,9 @@ const DonationType = () => {
   return (
     <div className='donationTypes'>
       <div>
-        <div className='header'>
+        <div className='web-header'>
           <h1>Donation Types</h1>
-          <button onClick={handleAddDonationType} className='AddUser'>Add Type</button>
+          <button onClick={handleAddDonationType} className='AddUser'><ControlPointIcon/> <p>Add Type</p></button>
         </div>
         <hr />
         <table className='userTable'>

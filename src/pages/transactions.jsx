@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getAll } from '../api_calls/transactionsAi';
+import RefreshIcon from '@mui/icons-material/Refresh';
 
 const Transactions = () => {
     const [transactions, setTransactions] = useState([]);
@@ -38,9 +39,9 @@ const Transactions = () => {
     return (
         <div className='webUsers'>
             <div>
-                <div className='header'>
+                <div className='web-header'>
                     <h1>Transactions</h1>
-                    <button onClick={handleRefresh} className='AddUser'>Refresh</button>
+                    <button onClick={handleRefresh} className='AddUser'><RefreshIcon/> <p>Refresh</p></button>
                 </div>
                 <hr />
                 <table className='userTable'>

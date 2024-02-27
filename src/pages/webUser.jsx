@@ -3,6 +3,9 @@ import {getAll, deleteUser} from '../api_calls/webUsersApi'
 import AddWebUserForm from '../components/webUsers/addWebUserForm'
 import EditWebUser from '../components/webUsers/editWebUsersForm'
 import { message } from 'antd'
+import ControlPointIcon from '@mui/icons-material/ControlPoint';
+import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const WebUsers = () => {
     const [users, setUsers] = useState([]);
@@ -37,12 +40,12 @@ const WebUsers = () => {
     return (
         <div className='webUsers'>
             <div>
-                <div className='header'>
+                <div className='web-header'>
                     <h1>Web users List</h1>
-                    <button onClick={handleAddUser} className='AddUser'>Add User</button>
+                    <button onClick={handleAddUser} className='AddUser'><ControlPointIcon/> <p>Add User</p></button>
                 </div>
                 <hr />
-                <table className='userTable'>
+                <table className='webUser-table'>
                     <thead>
                         <tr>
                             <th>User Name</th>
@@ -59,9 +62,9 @@ const WebUsers = () => {
                                 <td>{user.firstName}</td>
                                 <td>{user.lastName}</td>
                                 <td>{user.mobileNumber}</td>
-                                <td>
-                                    <button className='actionButton' onClick={() => handleEditUser(user)}>Edit</button>
-                                    <button className='actionButton' onClick={() => handleDeleteUser(user._id)}>Delete</button>
+                                <td className='actionBtnColumn'>
+                                    <button className='web-actionButton' onClick={() => handleEditUser(user)}><DriveFileRenameOutlineIcon/></button>
+                                    <button className='web-actionButton' onClick={() => handleDeleteUser(user._id)}><DeleteIcon/></button>
                                 </td>
                             </tr>
                         ))}

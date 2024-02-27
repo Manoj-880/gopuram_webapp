@@ -1,305 +1,385 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    hr{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .mainPage{
+        display: flex;
+        width: 100vw;
+        background-color: #4b4b4b2d;
+    }
+    
+    .App{
+        width: 85%;
+        margin: 1rem;
+        padding: 1rem 3rem;
+        background-color: #fff;
+        border-radius: 0.5rem;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    
+    .AddUser{
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        height: 3rem;
+        border: 0.5px solid black;
+    }
+    
+    .userTable{
+        width: 100%;
+    }
+    
+    .actionButton{
+        margin: 0.2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .modal-content  {
+        background-color: aquamarine;
+        padding: 1rem;
+        width: 50%;
+        margin: auto;
+    }
+    
+    .modal-content form{
+        display: flex;
+        gap: 1em;
+        flex-direction: column;
+    }
+    
+    .modal-content form .submit{
+        width: 5rem;
+    }
+    
+    /* ------------login page------------ */
+    
+    .loginComponent{
+        height: 100vh;
+        width: 100%;
+        background-color: #3b3b7c;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url('./assets/loginBackground.png');
+        background-size: cover;
+    }
+    
+    .login{
+        width: auto;
+        padding: 5rem 10rem;
+        border-radius: 0.5rem;
+        background-color: #00000094;
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .login h2{
+        color: #eee;
+        margin-bottom: 0.5rem;
+    }
+    
+    .login form{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .login input{
+        font-size: 1rem;
+        border: #eee 0.5px solid;
+        padding: 0.5rem 0.8rem;
+        border-radius: 0.2rem;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        color: #fff;
+    }
+    
+    .login input:focus{
+        outline: none;
+    }
+    
+    .login input::placeholder{
+        color: #aaa;
+        font-size: 0.9rem;
+    }
+    
+    .login .inputsGroup{
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        align-items: center;
+    }
+    
+    .login .inputsGroup .form-group{
+        margin-bottom: 0.8rem;
+    }
+    
+    .login form button{
+        margin-top: 1rem;
+        cursor: pointer;
+        padding: 0.3rem 1.2rem;
+        border-radius: 0.2rem;
+        border: 0.5px #ffde22 solid;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #4b4b4b;
+        background-color: #ffde22;
+        transition: 0.5s;
+    }
+    
+    .login form button:hover{
+        background-color: #eeeeee3f;
+        color: #eee;
+        border: 0.5px #eee solid;
+    }
+    
+    /* ----------side nav---------- */
+    
+    
+    .sideNavComponent{
+        width: 15%;
+        height: 100vh;
+        padding: 1rem 0 1rem 1rem;
+    }
+    
+    .sideNav{
+        position: relative;
+        width: 100%;
+        background-color: #1C2146;
+        height: 100%;
+        padding: 1rem;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    
+    .sideNav .active{
+        background-color: #2B2F57;
+        color: #EFB016;
+    }
+    
+    .sideNav .active p{
+        scale: 1.05;
+    }
+    
+    
+    .sideNav .inactive{
+        background-color: transparent;
+        color: #eee;
+    }
+    
+    .sideNav .inactive:hover{
+        background-color: #2B2F57;
+    }
+    
+    .sideNav .navLink {
+        text-decoration: none;
+        font-size: 1.2rem;
+        padding: 0.5rem 0 0.5rem 1rem;
+        border-radius: 5px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0.2rem 0rem;
+    }
+    
+    .sideNav p{
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .userDetails{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+        color: #eee;
+    }
+    
+    .userData .userName{
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+    
+    .logout{
+        width: 85%;
+        height: 2.5rem;
+        margin-bottom: 2rem;
+        border-radius: 0.2rem;
+        position: absolute;
+        bottom: 0;
+        border: 1px solid #eee;
+        background-color: #ffffff9a;
+        backdrop-filter: blur(5px);
+        color: #000;
+        font-weight: 500;
+        transition: 0.5s;
+    }
+    
+    .sideNav hr{
+        color: #fff;
+    }
+    
+    .navlist{
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+    
+    .logout:hover{
+        backdrop-filter: blur(0px);
+        background-color: #fff;
+        font-weight: 600;
+    }
+    
+    /* ---------------gallery------------- */
+    
+    .imageContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+        grid-gap: 1rem;
+    }
+    
+    .imageWrapper {
+        width: 10rem;
+        height: 10rem;
+        padding: 0.2rem;
+        border: solid 0.5px #4b4b4b;
+        border-radius: 0.5rem;
+        background-color: #fff;
+    }
+    
+    .imageWithDeleteIcon {
+        border-radius: 0.2rem;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .deleteButton {
+        position: absolute;
+        bottom: 0rem;
+        right: 0rem;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 5px 0 0 0;
+        background-color: #1c214681;
+        border: none;
+        cursor: pointer;
+        backdrop-filter: blur(5px);
+        transition: 0.5s;
+    }
+    
+    .deleteButton:hover{
+        backdrop-filter: blur(0px);
+        background-color: #1C2146;
+    }
 
-hr{
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
+    /* ----------------web users----------- */
 
-.mainPage{
-  display: flex;
-  width: 100vw;
-  background-color: #4b4b4b2d;
-}
+    .web-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-.App{
-  width: 85%;
-  margin: 1rem;
-  padding: 1rem 3rem;
-  background-color: #fff;
-  border-radius: 0.5rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
+    .web-header h1{
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        color: #4b4b4b;
+        margin-bottom: 0;
+    }
 
-.header{
-  margin-top: 2%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    .web-header button{
+        border: solid 1px #4b4b4b;
+        background-color: #1c2146a1;
+        backdrop-filter: blur(5px);
+        padding: 0 1rem;
+        font-size: 1rem;
+        color: #eee;
+        font-weight: 500;
+        border-radius: 0.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        transition: 0.5s;
+    }
 
-.AddUser{
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  height: 3rem;
-  border: 0.5px solid black;
-}
+    .web-header button p{
+        margin-bottom: 0;
+    }
 
-.userTable{
-  width: 100%;
-}
+    .web-header button:hover{
+        background-color: #1C2146;
+        color: #fff;
+        backdrop-filter: blur(0px);
+    }
 
-.actionButton{
-  margin: 0.2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
+    .webUser-table {
+        color: #4b4b4b;
+        padding: 0;
+        width: 100%;
+        border-collapse:separate;
+    }
+    
+    .webUser-table th,
+    .webUser-table td {
+        padding: 0.5rem 5rem;
+        text-align: center;
+    }
+    
+    .webUser-table th {
+        background-color: #1c214693;
+        backdrop-filter: blur(5px);
+        color: #eee;
+    }
+    
+    .webUser-table th,
+    .webUser-table td {
+        width: calc(100% / 5);
+    }
+    
+    .web-actionButton {
+        margin-right: 0.5rem; 
+        border: none;
+        height: 3rem;
+        width: 3rem;
+        padding: 0 1.5rem;
+        background-color: #1c214693;
+        backdrop-filter: blur(5px);
+        border-radius: 0.2rem;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .actionBtnColumn{
+        display: flex;
+        gap: 0.5rem;
+    }
 
-.modal-content  {
-  background-color: aquamarine;
-  padding: 1rem;
-  width: 50%;
-  margin: auto;
-}
-
-.modal-content form{
-  display: flex;
-  gap: 1em;
-  flex-direction: column;
-}
-
-.modal-content form .submit{
-  width: 5rem;
-}
-
-/* ------------login page------------ */
-
-.loginComponent{
-  height: 100vh;
-  width: 100%;
-  background-color: #3b3b7c;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url('./assets/loginBackground.png');
-  background-size: cover;
-}
-
-.login{
-  width: auto;
-  padding: 5rem 10rem;
-  border-radius: 0.5rem;
-  background-color: #00000094;
-  display: flex;
-  gap: 1rem;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-}
-
-.login h2{
-  color: #eee;
-  margin-bottom: 0.5rem;
-}
-
-.login form{
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.login input{
-  font-size: 1rem;
-  border: #eee 0.5px solid;
-  padding: 0.5rem 0.8rem;
-  border-radius: 0.2rem;
-  display: flex;
-  align-items: center;
-  background-color: transparent;
-  color: #fff;
-}
-
-.login input:focus{
-  outline: none;
-}
-
-.login input::placeholder{
-  color: #aaa;
-  font-size: 0.9rem;
-}
-
-.login .inputsGroup{
-  display: flex;
-  flex-direction: column;
-  width: auto;
-  align-items: center;
-}
-
-.login .inputsGroup .form-group{
-  margin-bottom: 0.8rem;
-}
-
-.login form button{
-  margin-top: 1rem;
-  cursor: pointer;
-  padding: 0.3rem 1.2rem;
-  border-radius: 0.2rem;
-  border: 0.5px #ffde22 solid;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #4b4b4b;
-  background-color: #ffde22;
-  transition: 0.5s;
-}
-
-.login form button:hover{
-  background-color: #eeeeee3f;
-  color: #eee;
-  border: 0.5px #eee solid;
-}
-
-/* ----------side nav---------- */
-
-
-.sideNavComponent{
-  width: 15%;
-  height: 100vh;
-  padding: 1rem 0 1rem 1rem;
-}
-
-.sideNav{
-  position: relative;
-  width: 100%;
-  background-color: #1C2146;
-  height: 100%;
-  padding: 1rem;
-  text-decoration: none;
-  border-radius: 0.5rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.sideNav .active{
-  background-color: #2B2F57;
-  color: #EFB016;
-}
-
-.sideNav .active p{
-  scale: 1.05;
-}
-
-
-.sideNav .inactive{
-  background-color: transparent;
-  color: #eee;
-}
-
-.sideNav .inactive:hover{
-  background-color: #2B2F57;
-}
-
-.sideNav .navLink {
-  text-decoration: none;
-  font-size: 1.2rem;
-  padding: 0.5rem 0 0.5rem 1rem;
-  border-radius: 5px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 0.2rem 0rem;
-}
-
-.sideNav p{
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.userDetails{
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5rem;
-  color: #eee;
-}
-
-.userData .userName{
-  font-size: 1.8rem;
-  font-weight: 500;
-}
-
-.logout{
-  width: 85%;
-  height: 2.5rem;
-  margin-bottom: 2rem;
-  border-radius: 0.2rem;
-  position: absolute;
-  bottom: 0;
-  border: 1px solid #eee;
-  background-color: #ffffff9a;
-  backdrop-filter: blur(5px);
-  color: #000;
-  font-weight: 500;
-  transition: 0.5s;
-}
-
-.sideNav hr{
-  color: #fff;
-}
-
-.navlist{
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.logout:hover{
-  backdrop-filter: blur(0px);
-  background-color: #fff;
-  font-weight: 600;
-}
-
-/* ---------------gallery------------- */
-
-.imageContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-  grid-gap: 1rem;
-}
-
-.imageWrapper {
-  width: 10rem;
-  height: 10rem;
-  padding: 0.2rem;
-  border: solid 0.5px #4b4b4b;
-  border-radius: 0.5rem;
-  background-color: #fff;
-}
-
-.imageWithDeleteIcon {
-  border-radius: 0.2rem;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.deleteButton {
-  position: absolute;
-  bottom: 0rem;
-  right: 0rem;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 5px 0 0 0;
-  background-color: #1c214681;
-  border: none;
-  cursor: pointer;
-  backdrop-filter: blur(5px);
-  transition: 0.5s;
-}
-
-.deleteButton:hover{
-  backdrop-filter: blur(0px);
-  background-color: #1C2146;
-}
+    

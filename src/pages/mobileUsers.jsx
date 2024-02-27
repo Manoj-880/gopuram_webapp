@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {getAll, deleteUser} from '../api_calls/mobileUsersApi'
 import EditMobileUser from '../components/mobileUsers/editMobileUserForm';
 import { message } from 'antd';
+import RefreshIcon from '@mui/icons-material/Refresh';
 
 const MobileUsers = () => {
   const [users, setUsers] = useState([]);
@@ -28,12 +29,17 @@ const handleDeleteUser = async (userId) => {
     window.location.reload();
 };
 
+const handleRefresh = () => {
+  window.location.reload();
+};
+
   return (
     <div className='mobileUsers'>
       <div>
-        <div className='header'>
-          <h1>Mobile users list</h1>
-        </div>
+      <div className='web-header'>
+          <h1>Mobile Users</h1>
+          <button onClick={handleRefresh} className='AddUser'><RefreshIcon/> <p>Refresh</p></button>
+      </div>
         <hr />
         <table className='userTable'>
         < thead>

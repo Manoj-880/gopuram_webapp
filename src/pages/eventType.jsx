@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {getAll} from '../api_calls/eventTypeApi'
 import AddEventTypeForm from '../components/eventTypes/addEventTypeForm';
 import EditEventType from '../components/eventTypes/editEventTypeForm';
+import ControlPointIcon from '@mui/icons-material/ControlPoint';
 
 const EventType = () => {
   const [eventTypes, setEventTypes] = useState([]);
@@ -30,9 +31,9 @@ const EventType = () => {
   return (
     <div className='eventType'>
       <div>
-        <div className='header'>
+        <div className='web-header'>
           <h1>Event Types</h1>
-          <button onClick={handleAddEventType} className='AddUser'>Add Event type</button>
+          <button onClick={handleAddEventType} className='AddUser'><ControlPointIcon/> <p>Add Type</p></button>
         </div>
         <hr />
         <table className='userTable'>
