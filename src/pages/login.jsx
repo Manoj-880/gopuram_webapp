@@ -52,16 +52,18 @@ const Login = () => {
                                 placeholder='User Name*'
                             />
                         </div>
-                        <div className='form-group' style={{marginBottom:"0.5rem"}}>
-                            <input
-                                type='password'
-                                id='password'
-                                name='password'
-                                value={formData.password}
-                                onChange={handleChange}
-                                required
-                                placeholder='Password*'
-                            />
+                        <div>
+                            <div className='form-group' style={{marginBottom:"0.5rem"}}>
+                                <input
+                                    type='password'
+                                    id='password'
+                                    name='password'
+                                    value={formData.password}
+                                    onChange={handleChange}
+                                    required
+                                    placeholder='Password*'
+                                />
+                            </div>
                         </div>
                     </div>
                     <button type='submit'>Login</button>

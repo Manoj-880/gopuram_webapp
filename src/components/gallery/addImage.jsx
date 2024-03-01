@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { add } from '../../api_calls/galleryApi';
 
 const AddImage = ({ setShowModal }) => {
     const [selectedImage, setSelectedImage] = useState(null);
@@ -11,23 +12,16 @@ const AddImage = ({ setShowModal }) => {
     };
     
 
-    const handleFormSubmit = (event) => {
+    const handleFormSubmit = async (event) => {
         event.preventDefault();
         if (!selectedImage) return;
-    
-        const reader = new FileReader();
-        reader.onload = () => {
-            const imageBase64 = reader.result;
-            const storedImages = localStorage.getItem('galleryImages');
-            const updatedImages = storedImages ? JSON.parse(storedImages) : [];
-            updatedImages.push(imageBase64);
-            localStorage.setItem('galleryImages', JSON.stringify(updatedImages));
-            setShowModal(false); 
-        };
-        reader.readAsDataURL(selectedImage);
+        const formData = new FormData();
+        formData.append('image', selectedImage);
+        await add(formData);
+        setShowModal(false);
+        window.location.reload();
     };
     
-
     return (
         <div>
             <div className="modal-content">
